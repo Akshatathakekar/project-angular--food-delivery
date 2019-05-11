@@ -12,6 +12,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeService } from './welcome.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { WelcomeService } from './welcome.service';
 
   ],
 
-  providers: [WelcomeService],
+  providers: [WelcomeService,AuthService],
   
   bootstrap: [AppComponent]
 })

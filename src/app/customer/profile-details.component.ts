@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Users } from '../user';
 import { CustomerService } from './customer.service';
 import { ActivatedRoute } from '@angular/router';
+import { Address } from '../deliveryboy/deliveryboy';
 
 @Component({
     // selector: 'sky-vertical-tabs-demo',
@@ -17,6 +18,8 @@ export class ProfileDetailsComponent implements OnInit
 
     constructor(private dataService: CustomerService,private route:ActivatedRoute) { }
     user: Users;
+    address:Address;
+
     
   @Input() rating: number;
   @Input() itemId: number;
@@ -27,7 +30,9 @@ export class ProfileDetailsComponent implements OnInit
   ngOnInit() {
         this.inputName = this.itemId + '_rating';
 
-        
+        this.user=new Users();
+        this.address=new Address();
+
         this.route.paramMap.subscribe((map)=>{
         let  email=map.get("email");
 
@@ -38,6 +43,20 @@ export class ProfileDetailsComponent implements OnInit
 
     });
   }
+
+//   addressDetails():void{
+//     this.route.paramMap.subscribe((map)=>{
+//         let  email=map.get("email");
+
+//         this.dataService.findAddressByEmail(email).subscribe((data)=>{
+//         this.user=data;
+
+//         });
+
+//     });
+//   }
+
+
   onClick(rating: number): void {
     this.rating = rating;
     this.ratingClick.emit({
@@ -99,16 +118,16 @@ export class ProfileDetailsComponent implements OnInit
 
 
 
-    users=
-        {
-        "id":101,
-        "name":"Jeny Doe",
-        "address":"shivaji chowk,LMN Road",
-        "city":"Mumbai",
-        "imageUrl":"assets/images/profile.jpg",
-        "firstAddress":"Shiivaji Chowk , Near Axis Bank ,Mumbai",
-        "secondAddress":"LMN Road ,Near Railway Station,Thane",
-        "comments":"Delicious food and good service"
-    }
+    // users=
+    //     {
+    //     "id":101,
+    //     "name":"Jeny Doe",
+    //     "address":"shivaji chowk,LMN Road",
+    //     "city":"Mumbai",
+    //     "imageUrl":"assets/images/profile.jpg",
+    //     "firstAddress":" ",
+    //     "secondAddress":"",
+    //     "comments":"Delicious food and good service"
+    // }
    
 }

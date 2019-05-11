@@ -1,6 +1,6 @@
 
 export class Address{
-    addressLine1:string;
+    addressLine:string;
     city:string;
 }
 

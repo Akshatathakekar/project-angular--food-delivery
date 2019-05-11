@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class CustomerService{
-    baseUrl="http://localhost:8080"
 
+    baseUrl="http://localhost:8090/api/users";
     constructor(private http:HttpClient) { }
     
     findAddressByEmail(email:String): Observable<Users> {
-        return this.http.get<Users>(this.baseUrl + "/users/" + email);
+        return this.http.get<Users>(this.baseUrl + "/" + "herbert@gmail.com");
     }
 
     

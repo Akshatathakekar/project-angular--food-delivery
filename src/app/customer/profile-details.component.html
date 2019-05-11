@@ -11,7 +11,7 @@
   </div>
 </div> -->
 
-
+<b>{{users.name}}</b>
 
 <div class="conatiner">
 
@@ -25,7 +25,7 @@
       <div class="row justify-content-md-center" style="background-color: #f3eaea;">
         <div class="col col-lg-2 ">
           <br>
-          <img src="{{Users.imageUrl}}" alt="..." class="rounded-circle" height="220px" width="200px"><br><br>
+          <img src="{{user.imageUrl}}" alt="..." class="rounded-circle" height="220px" width="200px"><br><br>
         </div>
 
 
@@ -38,10 +38,10 @@
         <div class="col col-lg-2 text-dark">
           <br>
           <br><br><br>
-          <h3>{{Users.name}}</h3>
+          <h3>{{user.name}}</h3>
           <span>
             <img src="/assets/images/mapicon.png" height="20px" />
-            {{Users.city}}
+            {{user.address.city}}
           </span>
 
         </div>
@@ -66,11 +66,11 @@
                   aria-controls="profile" role="tab" data-toggle="tab">
                   <h4>Orders</h4>
                 </a></li>
-              <li role="presentation"><a href="#messages" style="text-decoration: none;" aria-controls="messages"
+              <li role="presentation"><a href="#messages"  style="text-decoration: none;" aria-controls="messages"
                   role="tab" data-toggle="tab">
                   <h4>Favourites</h4>
                 </a></li>
-              <li role="presentation"><a href="#settings" style="text-decoration: none;" aria-controls="settings"
+              <li role="presentation"><a href="#settings"  style="text-decoration: none;" aria-controls="settings"
                   role="tab" data-toggle="tab">
                   <h4>Addresses</h4>
                 </a></li>
@@ -146,14 +146,14 @@
                                   </div>
                                   <div class="modal-body">
                                     <h5><b> Order Id: </b>{{order.orderId}} </h5>
-                                    <p> {{Users.address}}</p>
+                                    <p> {{user.address.addressLine}}</p>
                                     <hr>
 
                                     <b>Ratings</b>
                                     <p>{{order.ratings}}</p>
 
                                     <hr>
-                                    {{Users.comments}}
+                                    {{user.comments}}
                                     <hr>
                                     <div class="modal-body">
                                       {{order.price}}
@@ -271,13 +271,13 @@
                     <div class="card bg-light mb-6" style="max-width: 20rem;">
                       <div class="card-header text-dark">Address 1</div>
                       <div class="card-body">
-                        <p class="card-text text-dark">{{Users.Address.address[0]}}</p>
+                        <p class="card-text text-dark">{{user.address.addressLine}}, {{user.address.city}}</p>
                       </div>
                     </div>
                     <div class="card bg-light mb-6" style="max-width: 20rem;">
                       <div class="card-header text-dark">Address 2</div>
                       <div class="card-body">
-                        <p class="card-text text-dark">{{Users.secondAddress}}</p>
+                        <p class="card-text text-dark"></p>
                       </div>
 
                     </div>

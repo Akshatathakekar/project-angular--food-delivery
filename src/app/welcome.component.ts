@@ -26,8 +26,16 @@ export class WelcomeComponent implements OnInit {
             console.log("success");
 
             if (data != null) {
+               
+
+
                 alert("registration is successfulPlease, login");
+
+
                 this.router.navigate(["/home"]);
+                var element = document.getElementById("my");
+                 element.classList.remove("show");
+                document.querySelector('.modal-backdrop').classList.remove("fade","modal-backdrop");
 
             }
 
@@ -47,9 +55,11 @@ export class WelcomeComponent implements OnInit {
                 console.log("success");
 
                 alert("Login successful");
-              
-
                 this.router.navigate(["/profile"]);
+
+                var element = document.getElementById("myModal");
+                element.classList.remove("show");
+               document.querySelector('.modal-backdrop').classList.remove("fade","modal-backdrop");
             }
         })
     }
