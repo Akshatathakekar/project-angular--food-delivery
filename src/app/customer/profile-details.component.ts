@@ -44,17 +44,7 @@ export class ProfileDetailsComponent implements OnInit
     });
   }
 
-//   addressDetails():void{
-//     this.route.paramMap.subscribe((map)=>{
-//         let  email=map.get("email");
 
-//         this.dataService.findAddressByEmail(email).subscribe((data)=>{
-//         this.user=data;
-
-//         });
-
-//     });
-//   }
 
 
   onClick(rating: number): void {
@@ -64,6 +54,11 @@ export class ProfileDetailsComponent implements OnInit
       rating: rating
     });
 
+
+
+
+
+    
    
  }
 
